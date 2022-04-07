@@ -46,9 +46,10 @@ h3,
 h4, 
 h5, 
 h6 {
-    padding: 1rem;
-    width: 70%;
+    padding: 0 1rem;
+    width: 60%;
     margin: 2vh auto;
+    color: var(--TColor-2);
 }
 
 h1 {
@@ -84,6 +85,7 @@ p {
     font-weight: 300;
     width: 60%;
     margin: 1em auto;
+    line-height: 2em;
     font-size: var(--bodySize);
 }
 
@@ -175,25 +177,24 @@ header a {
 .menu {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     transition: 0.5s;
     transition-property: right;
     position: fixed;
     flex-direction: column;
     background-color: var(--TColor-3);
     color: white;
-    min-width: 35vw;
     height: 100vh;
     overflow: hidden;
     top: 0;
-    right: -105%;
+    right: -120%;
 }
 
 .menu a {
-    min-width: 40vw;
-    text-align: center;
+    min-width: 100%;
+    text-align: left;
     color: white;
-    padding: 1em 0;
+    padding: 1em 10vw;
     transition: all 0.3s ease-in-out;
     background-color: inherit;
 }
@@ -301,6 +302,7 @@ a.currentSection {
     letter-spacing: 0.05em;
     line-height: 0.8;
     width: 70vw;
+    color: white;
     /* background-color: red; */
 }
 
@@ -312,6 +314,8 @@ a.currentSection {
     margin-top: 1em;
     line-height: 1.25em;
     font-size: clamp(1.50rem, calc(1.21rem + 1.43vw), 2.50rem);
+    font-weight: 900;
+    color: white;
 }
 
 #hero img {
@@ -389,7 +393,7 @@ a.currentSection {
 
 .cardText {
     color: white;
-    text-shadow: 2px 0px 5px hsla(0, 0%, 0%, 0.7);
+    text-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.7);
     transition: all 0.6s ease-in-out;
 }
 
@@ -406,6 +410,11 @@ a.currentSection {
 
 .cardText h2 {
     line-height: 1em;
+    font-family: var(--sans);
+}
+
+.cardText p {
+    font-weight: 500;
 }
 
 /* CONTENT */
@@ -413,91 +422,64 @@ a.currentSection {
     width: 100%;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    margin-top: 15vh;
+    /* display: flex;
+    justify-content: center; */
+}
+
+div.last {
+    margin-bottom: 10vh;
 }
 
 
 /* HISTORY */
-.T_content {
-    flex-direction: column;
-}
-
 .T_section {
-    width: 80vw;
-    margin: 0 auto;
-    padding: 0;
+    width: 70%;
+    margin: 2em auto;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .T_section p {
-    line-height: 2em;
-    width: 60%;
-    margin: 1em 0em 1em 2em;
+    width: 90%;
 }
 
-.T_section .img_center {
-    width: 100%;
-    margin: 1em auto;
-}
-
-.T_vert {
-    flex-direction: column;
-}
-
-.T_vert p {
+.T_section.imgGraf .imgBlock {
     width: 80%;
+    margin-right: 3vw;
+}
+
+.slideshow-container {
+    width: 70%;
     margin: 1em auto;
 }
 
 blockquote {
-    width: 70%;
-    margin: 2em auto;
+    width: 50%;
+    margin: 1em auto;
     text-align: center;
     font-family: var(--serif);
     font-size: var(--h2Size);
+    color: var(--TColor-2);
+}
+
+.audioCont {
+    width: 100%;
+    margin-right: 2em;
+}
+
+.audioCont iframe {
+    width: 100%;
+}
+
+.audioCaption {
+    font-family: var(--serif);
+    line-height: 1.5em;
 }
 
 .ytCont {
     width: 100%;
     height: 60vh;
-}
-
-.audioCont {
-    width: 60%;
-    margin: 0 5vw;
-}
-
-.audioCont iframe {
-    height: 300px;
-}
-
-.stacked .audioCont {
-    width: 100%;
-    margin: 20vh 0 0;
-}
-
-.stacked .audioCont iframe {
-    height: 100px;
-}
-
-.stacked {
-    width: 100%;
-    margin: 10vh 0;
-}
-
-.stacked p {
-    width: 75%;
-}
-
-.stacked-line {
-    display: flex;
-}
-
-.uneven-Left {
-    width: 100% !important;
 }
 
 
@@ -623,6 +605,8 @@ blockquote {
 .text {
     color: #f2f2f2;
     font-size: clamp(0.75rem, 0.68rem + 0.36vw, 1.00rem);
+    font-family: var(--serif);
+    font-weight: 700;
     padding: 0.6em;
     position: absolute;
     bottom: 0em;
@@ -636,6 +620,10 @@ blockquote {
     font-weight: 700;
     text-decoration: underline;
     color: white;
+}
+
+.text span {
+    font-family: var(--sans);
 }
 
 /* Number text (1/3 etc) */
@@ -672,7 +660,7 @@ blockquote {
 /* FOOTER */
 #footer {
     background-color: var(--TColor-3);
-    height: 40vh;
+    height: inherit;
     color: var(--bodyColor);
     display: flex;
     flex-direction: column;
@@ -723,6 +711,10 @@ blockquote {
     padding: 0.5em;
 }
 
+#footer p {
+    line-height: 1.5em;
+}
+
 .VisCom {
     text-decoration: underline;
 }
@@ -745,7 +737,15 @@ blockquote {
         width: 7vw;
     }
 
-    .T_section {
+    .T_section.imgGraf {
+        flex-direction: column;
+    }
+
+    .T_section.imgGraf .imgBlock {
+        width: 100%;
+    }
+
+    /* .T_section {
         width: 85vw;
     }
     
@@ -755,10 +755,11 @@ blockquote {
     
     .T_vert p {
         width: 80%;
-    }
+    } */
+    
     
     blockquote {
-        width: 80%;
+        width: 60%;
     }
     
     .CI_desc {
@@ -782,10 +783,6 @@ blockquote {
         background-size: 130vw;
     }
 
-    #footer {
-        height: 30vh;
-    }
-
     .footerInside {
         width: 95vw;
     }
@@ -798,19 +795,7 @@ blockquote {
 
 @media screen and (max-width: 915px) {
     .T_section {
-        width: 80vw;
-        display: flex;
         flex-direction: column;
-        padding: 2em 0 0;
-    }
-    
-    .T_section p {
-        width: 100%;
-        margin: 1em auto;
-    }
-    
-    .T_vert p {
-        width: 100%;
     }
     
     .ytCont {
@@ -818,39 +803,6 @@ blockquote {
         height: 60vh;
     }
 
-    .audioCont {
-        width: 100%;
-        margin: 0 5vw;
-    }
-
-    .audioCont iframe {
-        height: 100px;
-    }
-
-    .stacked .audioCont {
-        width: 100%;
-    }
-    
-    .stacked .audioCont iframe {
-        height: 100px;
-    }
-    
-    .stacked {
-        width: 100%;
-        margin: 10vh 0;
-    }
-    
-    .stacked p {
-        width: 100%;
-    }
-    
-    .stacked-line {
-        flex-direction: column;
-    }
-    
-    .uneven-Left {
-        width: 70%;
-    }
 
     
 }
@@ -912,8 +864,24 @@ blockquote {
         margin: 0 0 0 8vw;
     }
     
-    #footer {
-        height: 55vh;
+    h2 {
+        width: 70%;
+    }
+
+    p {
+        width: 70%;
+    }
+
+    .img_center {
+        width: 80%;
+    }
+
+    .T_section {
+        width: 80%;
+    }
+
+    .slideshow-container {
+        width: 90%;
     }
 
     .footerInside {
@@ -960,7 +928,6 @@ blockquote {
     }
 
     #footer {
-        height: 80vh;
         padding: 10vh 0 0;
     }
 
@@ -981,7 +948,7 @@ blockquote {
     }
 
     .menu a {
-        min-width: 100vw;
+        padding: 1em 30vw;
     }
 
 }
@@ -999,8 +966,29 @@ blockquote {
         padding: 1.5vh 0;
     }
 
-    #footer {
-        height: 90vh;
+    .img_center {
+        width: 100%;
+    }
+
+    .T_section {
+        width: 100%;
+    }
+
+    .T_section p {
+        width: 70%;
+    }
+
+    .slideshow-container {
+        width: 100%;
+    }
+
+    .audioCont {
+        width: 100%;
+        margin: 0;
+    }
+
+    p.audioCaption {
+        width: 90%;
     }
 
     .footerLogo {
@@ -1039,30 +1027,15 @@ blockquote {
         padding: 10vh 0;
     }
 
-    .T_section {
-        width: 100vw;
-    }
-    
-    .T_section p {
-        width: 80%;
-        margin: 1em auto;
-    }
-    
-    .T_vert p {
-        width: 80%;
-    }
-    
-    .audioCont {
-        width: 100%;
-        margin: 0 5vw;
-    }
-
-    .audioCont iframe {
-        height: 100px;
-    }
-
     .imgBlock p {
         margin: 0.5em 1em !important;
+    }
+
+    .text {
+        padding: 0 0.8em 1em;
+        position: relative;
+        background: hsla(0, 0%, 0%, 0.8);
+        line-height: 1.25em;
     }
 }
 
