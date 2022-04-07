@@ -121,7 +121,7 @@ a {
 }
 
 .img_split {
-    width: 71%;
+    width: 85%;
     display: flex;
     margin: 1em auto;
     justify-content: space-between;
@@ -134,75 +134,21 @@ a {
 /* TIMBER HOME */
 /* NAVBAR */
 header {
-    z-index: 1;
-    position: fixed;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0em 5%;
-    align-items: center;
-    background-color: var(--TColor-1);
-    font-size: clamp(1.25rem, calc(1.18rem + 0.36vw), 1.50rem);
-    color: var(--bodyColor);
-    transition: 0.3s;
-    transition-property: top;
-} 
-
-.returnHome {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 5.5vw;
-}
-
-.resourceHome {
-    text-transform: uppercase;
-    /* background-color: red; */
-    padding: 1.25em 0.5em 1em;
-    line-height: 1.5rem;
-}
-
-.resourceHome:hover,
-.resourceHome:active {
-    text-decoration: underline;
+    background-color: var(--TColor-1) !important;
+    color: var(--bodyColor) !important;
 }
 
 header a {
-    color: var(--bodyColor);
+    color: var(--bodyColor) !important;
 }
 
-
 .menu {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    transition: 0.5s;
-    transition-property: right;
-    position: fixed;
-    flex-direction: column;
-    background-color: var(--TColor-3);
+    background-color: var(--TColor-3) !important;
     color: white;
-    height: 100vh;
-    overflow: hidden;
-    top: 0;
-    right: -120%;
 }
 
 .menu a {
-    min-width: 100%;
-    text-align: left;
     color: white;
-    padding: 1em 10vw;
-    transition: all 0.3s ease-in-out;
-    background-color: inherit;
-}
-
-.menu a:hover,
-.menu a:active {
-    text-decoration: underline;
-    filter: brightness(1.2);
 }
 
 .menu-btn {
@@ -212,60 +158,35 @@ header a {
 
 .menu-btn:hover,
 .menu-btn:active {
-    background-color: hsl(25, 13%, 73%);
-}
-
-.close-btn {
-    transition: all 0.4s ease-in-out;
-    position: absolute;
-    top: 0;
-    right: 5.5vw;
-    padding: 1em;
+    background-color: hsl(25, 13%, 73%) !important;
 }
 
 .close-btn:hover,
 .close-btn:active {
-    background-color: hsl(158, 90%, 17%);
-}
-
-.menu.active {
-    right: 0;
-}
-
-.btn {
-    cursor: pointer;
-    display: block;
-    font-size: 1.6rem;
+    background-color: hsl(158, 90%, 17%) !important;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     z-index: 1;
-    background: hsl(25, 13%, 63%);
+    background: hsl(25, 13%, 63%) !important;
     transition: all 0.4s ease-in-out;
     mix-blend-mode: screen 80%;
 }
 
 .sticky:hover, 
 .sticky:active {
-    background-color: var(--TColor-1);
-    mix-blend-mode: normal;
+    background-color: var(--TColor-1) !important;
 }
 
 a.currentSection {
-    background-color: hsl(158, 90%, 17%);
-}
-
-.current {
-    text-decoration: underline;
+    background-color: hsl(158, 90%, 17%) !important;
 }
 
 /* SUBLINKS */
 .sublinks {
-    display: flex;
-    flex-direction: column;
-    background-color: hsl(25, 13%, 63%);
+    background-color: hsl(25, 13%, 63%) !important;
 }
 
 
@@ -279,7 +200,7 @@ a.currentSection {
 #hero .title {
     position: absolute;
     width: inherit;
-    top: 28vh;
+    top: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -290,20 +211,36 @@ a.currentSection {
     transition: all 0.4s ease-out;
 }
 
+.title.sub {
+    top: 75vh !important;
+    width: 80% !important;
+}
+
 .title > * {
-    width: 100%;
+    width: 80%;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
+.title.sub > * {
+    text-align: left;
+}
+
 .title h1 {
     font-size: clamp(4.50rem, calc(3.11rem + 6.96vw), 9.38rem);
-    letter-spacing: 0.05em;
-    line-height: 0.8;
-    width: 70vw;
+    line-height: 1.15em;
+    width: 80%;
     color: white;
     /* background-color: red; */
+}
+
+.title h1 br {
+    height: 1em;
+}
+
+.title.sub h1 {
+    font-size: var(--h2Size);
 }
 
 .title h2 {
@@ -311,7 +248,7 @@ a.currentSection {
     letter-spacing: 0.05em;
     /* background-color: red; */
     width: 70vw;
-    margin-top: 1em;
+    margin-top: 0.5em;
     line-height: 1.25em;
     font-size: clamp(1.50rem, calc(1.21rem + 1.43vw), 2.50rem);
     font-weight: 900;
@@ -322,7 +259,7 @@ a.currentSection {
     width: 100%;
     object-fit: cover;
     height: 100vh;
-    background-color: black;
+    background-color: var(--TColor-3);
 }
 
 #hero svg {
@@ -381,7 +318,7 @@ a.currentSection {
     color: transparent;
     display: flex;
     flex-direction: column;
-    transform: translate(25vw, 3em);
+    transform: translate(18vw, 3em);
     position: absolute;
     font-size: clamp(2.00rem, calc(1.57rem + 2.14vw), 3.50rem);
     transition: all 0.4s ease-in-out;
@@ -395,6 +332,7 @@ a.currentSection {
     color: white;
     text-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.7);
     transition: all 0.6s ease-in-out;
+    backdrop-filter: blur(6px);
 }
 
 .cardText:hover,
@@ -409,12 +347,14 @@ a.currentSection {
 }
 
 .cardText h2 {
+    color: white;
     line-height: 1em;
     font-family: var(--sans);
 }
 
 .cardText p {
     font-weight: 500;
+    line-height: 1.5em;
 }
 
 /* CONTENT */
@@ -422,13 +362,21 @@ a.currentSection {
     width: 100%;
     padding: 0;
     margin: 0;
-    margin-top: 15vh;
+    padding-top: 15vh;
     /* display: flex;
     justify-content: center; */
 }
 
-div.last {
+div.last,
+.last {
     margin-bottom: 10vh;
+}
+
+.intro {
+    font-family: var(--serif);
+    font-size: clamp(1.63rem, calc(1.52rem + 0.54vw), 2.00rem);
+    line-height: 1.5em;
+    margin-bottom: 20vh;
 }
 
 
@@ -442,12 +390,29 @@ div.last {
 
 .T_section p {
     width: 90%;
+    margin: 0.5em auto;
 }
 
 .T_section.imgGraf .imgBlock {
     width: 80%;
     margin-right: 3vw;
 }
+
+.T_section.imgGraf .ytCont {
+    width: 100%;
+    height: 60vh;
+    margin-right: 3vw;
+}
+
+.T_section.grafs {
+    align-items: flex-start;
+}
+
+.T_section.grafs p {
+    width: 46%;
+}
+
+
 
 .slideshow-container {
     width: 70%;
@@ -456,7 +421,7 @@ div.last {
 
 blockquote {
     width: 50%;
-    margin: 1em auto;
+    margin: 10vh auto;
     text-align: center;
     font-family: var(--serif);
     font-size: var(--h2Size);
@@ -472,22 +437,39 @@ blockquote {
     width: 100%;
 }
 
+.audioCont.alone {
+    width: 70%;
+    margin: 10vh auto;
+}
+
 .audioCaption {
     font-family: var(--serif);
     line-height: 1.5em;
 }
 
 .ytCont {
+    width: 70%;
+    height: 80vh;
+    margin: 20vh auto;
+}
+
+.ytCont iframe {
     width: 100%;
-    height: 60vh;
+    height: inherit;
 }
 
 
 /* CURRENT INDUSTRY */
+.industry {
+    display: flex;
+    justify-content: center;
+}
+
 .CI_desc {
     width: 60%;
     display: flex;
-    padding: 15vh 0;
+    margin: 0 auto;
+    padding: 0 0 15vh;
 }
 
 .descCol {
@@ -659,9 +641,9 @@ blockquote {
 
 /* FOOTER */
 #footer {
-    background-color: var(--TColor-3);
+    background-color: var(--TColor-3) !important;
     height: inherit;
-    color: var(--bodyColor);
+    color: var(--bodyColor) !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -670,7 +652,7 @@ blockquote {
 }
 
 #footer a {
-    color: white;
+    color: white !important;
 }
 
 .footerInside {
@@ -733,9 +715,6 @@ blockquote {
 }
 
 @media (max-width: 1080px) {
-    .logo img {
-        width: 7vw;
-    }
 
     .T_section.imgGraf {
         flex-direction: column;
@@ -745,17 +724,15 @@ blockquote {
         width: 100%;
     }
 
-    /* .T_section {
-        width: 85vw;
+    .T_section.grafs {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
-    .T_section p {
-        width: 90%;
+    .T_section.grafs p {
+        width: 70%;
     }
-    
-    .T_vert p {
-        width: 80%;
-    } */
     
     
     blockquote {
@@ -782,23 +759,26 @@ blockquote {
     .panel {
         background-size: 130vw;
     }
-
-    .footerInside {
-        width: 95vw;
-    }
-
-    .footerLogo {
-        margin: 0 0 0 1em;
-        padding: 1em 0;
-    }
 }
 
 @media screen and (max-width: 915px) {
     .T_section {
         flex-direction: column;
     }
+
+    .img_split {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em auto;
+    }
     
     .ytCont {
+        width: 100%;
+        height: 60vh;
+    }
+
+    .T_section.imgGraf .ytCont {
         width: 100%;
         height: 60vh;
     }
@@ -808,9 +788,6 @@ blockquote {
 }
 
 @media screen and (max-width: 800px) {
-    .logo img {
-        width: 8vw;
-    }
 
     .CI_desc {
         flex-direction: column;
@@ -883,29 +860,9 @@ blockquote {
     .slideshow-container {
         width: 90%;
     }
-
-    .footerInside {
-        width: 90vw;
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-
-    .footerLogo {
-        padding: 0.5em;
-        margin: 1em auto 0;
-    }
-
-    .footerLogo img {
-        width: 25vw;
-    }
 }
 
 @media screen and (max-width: 768px) {
-    
-    
-    .logo img {
-        width: 10vw;
-    }
 
     #hero .title {
         top: 30vh;
@@ -925,20 +882,6 @@ blockquote {
 
     .ytCont {
         height: 40vh;
-    }
-
-    #footer {
-        padding: 10vh 0 0;
-    }
-
-    .footerlinks {
-        flex-direction: column;
-        width: 50vw;
-        height: 25vh;
-    }
-
-    .footerlinks a {
-        margin: 0.25em 0;
     }
 }
 
@@ -960,6 +903,10 @@ blockquote {
     
     .logo img {
         width: 15vw;
+    }
+
+    .title h1 {
+        width: 100%;
     }
     
     .panel {
@@ -987,30 +934,29 @@ blockquote {
         margin: 0;
     }
 
+    .audioCont.alone {
+        width: 100%;
+        margin: 10vh auto;
+    }
+
     p.audioCaption {
         width: 90%;
-    }
-
-    .footerLogo {
-        padding: 2em 0.5em 0.5em;
-        margin: 1em auto 0;
-    }
-
-    .footerLogo img {
-        width: 40vw;
     }
 
     .imgBlock p {
         width: 90% !important;
         margin: 0.5em 1em !important;
     }
+
+    .text {
+        padding: 0.5 0.8em 1em;
+        position: relative;
+        background: hsl(0, 0%, 10%);
+        line-height: 1.25em;
+    }
 }
 
 @media screen and (max-width: 425px) {
-    .title h1 {
-        width: 100%;
-        /* background-color: red; */
-    }
 
     .descCol p:last-child {
         text-align: center;
@@ -1030,13 +976,6 @@ blockquote {
     .imgBlock p {
         margin: 0.5em 1em !important;
     }
-
-    .text {
-        padding: 0 0.8em 1em;
-        position: relative;
-        background: hsla(0, 0%, 0%, 0.8);
-        line-height: 1.25em;
-    }
 }
 
 
@@ -1044,5 +983,3 @@ blockquote {
 
     
 }
-  
-  
