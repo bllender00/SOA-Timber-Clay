@@ -52,7 +52,7 @@ h6 {
 }
 
 h1 {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-weight: 700;
     font-size: var(--h1Size);
 }
@@ -342,75 +342,70 @@ a.currentSection {
 
 /* PANELS */
 #panelCont {
+    width: 80%;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /*border-top: solid 2px var(--SOA-color6);
+    border-bottom: solid 2px var(--SOA-color6);*/
     transition: all 0.8s ease-in-out;
+    margin: 10vh auto;
 }
 
 .panel {
     display: flex;
-    margin: 5vh 0;
-    height: 70vh;
+    width: 100vw;
+    border: solid 2px white;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
     background: no-repeat center;
-    background-size: cover;
-    text-align: left;
+    background-size: 100vw;
+    text-align: center;
+    filter: grayscale(1);
+    transition: all 0.6s ease-in-out;
+}
+
+.panel:hover, 
+.panel:active {
+    cursor: pointer;
+    background-size: 140vw;
+    filter: grayscale(0);
+    width: 200vw;
+}
+
+.panel:after {
+    content: " \27A4";
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    transform: translate(25vw, 3em);
+    position: absolute;
+    font-size: clamp(2.00rem, calc(1.57rem + 2.14vw), 3.50rem);
     transition: all 0.4s ease-in-out;
 }
 
-.firstPanel {
-    margin-top: 20vh;
+.panel:hover:after {
+    color: hsla(0, 0%, 100%, 1);
 }
 
-.lastPanel {
-    margin-bottom: 20vh;
-}
-
-.panel h2 {
+.cardText {
     color: white;
-    font-size: clamp(3.13rem, calc(3.02rem + 0.54vw), 3.50rem);
-    text-shadow: 2px 4px 10px hsla(0, 0%, 0%, 0.7);
-    width: initial;
-    margin: 10vh auto 2vh 0;
-    padding: 1rem 3rem 1rem 5vw;
-    background-color: hsla(160, 90%, 12%, 0.8);
-    backdrop-filter: blur(5px);
+    text-shadow: 2px 0px 5px hsla(0, 0%, 0%, 0.7);
+    transition: all 0.6s ease-in-out;
 }
 
-.panel p {
-    background-color:hsla(0, 0%, 0%, 0.7);
-    background-blend-mode: darken;
-    color: white;
-    font-size: clamp(1.38rem, calc(1.34rem + 0.18vw), 1.50rem);
-    width: 50%;
-    margin: 3vh 0 0 0;
-    line-height: 2rem;
-    padding: 5vh 8vw 5vh 4vw;
-    font-style: italic;
-    backdrop-filter: blur(5px);
+.cardText:hover,
+.cardText:active {
+    filter: none;
 }
 
-.panel p a {
-    font-weight: 600;
-    font-size: clamp(1.25rem, calc(1.18rem + 0.36vw), 1.50rem);
-    padding: 1em 3em 0.75em;
-    transition: all 0.3s ease-in-out;
-    background-color: white;
-    border: solid 4px transparent;
-    color: var(--TColor-3);
-    border-radius: 5px;
-    font-style: normal;
+.cardText > * {
+    width: 90%;
+    margin: 0.25em auto;
+    /* background-color: rebeccapurple; */
 }
 
-.panel p a:hover, 
-.panel p a:active {
-    text-decoration: underline;
-    cursor: pointer;
-    background-color: transparent;
-    color: white;
-    border: solid 4px white;
+.cardText h2 {
+    line-height: 1em;
 }
 
 /* CONTENT */
@@ -779,6 +774,14 @@ blockquote {
         width: 100%;
     }
 
+    #panelCont {
+        width: 90vw;
+    }
+
+    .panel {
+        background-size: 130vw;
+    }
+
     #footer {
         height: 30vh;
     }
@@ -874,6 +877,40 @@ blockquote {
         text-align: left;
         margin-left: 3vw;
     }
+
+    #panelCont {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .panel {
+        width: 80vw;
+        padding: 5vh 0;
+        background: no-repeat center;
+        background-size: 100vw;
+        text-align: left;
+    }
+    
+    .panel:hover, 
+    .panel:active {
+        background-size: 120vw;
+        width: 80vw;
+    }
+
+    .panel:after {
+        display: flex;
+        flex-direction: column;
+        transform: translate(70vw, 0em);
+    }
+    
+    .cardText > * {
+        width: 70%;
+        padding: 0;
+        margin: 0 0 0 8vw;
+    }
     
     #footer {
         height: 55vh;
@@ -904,6 +941,14 @@ blockquote {
 
     #hero .title {
         top: 30vh;
+    }
+
+    .panel {
+        padding: 2.5vh 0;
+    }
+
+    .panel:after {
+        transform: translate(68vw, 0.15em);
     }
 
 }
@@ -939,11 +984,6 @@ blockquote {
         min-width: 100vw;
     }
 
-    .panel p {
-        width: 80%;
-        padding: 5vh 8vw 5vh;
-    }
-    
 }
 
 @media screen and (max-width: 500px) {
@@ -956,20 +996,8 @@ blockquote {
     }
     
     .panel {
-        height: 90vh;
+        padding: 1.5vh 0;
     }
-
-    .firstPanel {
-        margin-top: 11vh;
-    }
-
-    .lastPanel {
-        margin-bottom: 11vh;
-    }
-
-    /* .panel h2 {
-        margin: 20vh 0 2vh;
-    } */
 
     #footer {
         height: 90vh;
@@ -996,10 +1024,6 @@ blockquote {
         /* background-color: red; */
     }
 
-    /* .panel h2 {
-        margin: 15vh 0 2vh;
-    } */
-
     .descCol p:last-child {
         text-align: center;
         margin-left: 0vw;
@@ -1007,6 +1031,12 @@ blockquote {
 
     .descCol p a {
         padding: 0.75em 1.5em 0.65em;
+    }
+
+    #panelCont {
+        height: inherit;
+        margin: 0 auto;
+        padding: 10vh 0;
     }
 
     .T_section {
@@ -1039,10 +1069,7 @@ blockquote {
 
 @media screen and (max-width: 340px) {
 
-    .panel p a {
-        font-size: clamp(1.25rem, calc(1.18rem + 0.36vw), 1.50rem);
-        padding: 1em 2em 0.75em;
-    }
+    
 }
   
   
