@@ -262,6 +262,13 @@ a.currentSection {
     background-color: var(--TColor-3);
 }
 
+#hero video {
+    width: 100%;
+    object-fit: cover;
+    height: 100vh;
+    background-color: var(--TColor-3);
+}
+
 #hero svg {
     filter: opacity(0.9);
     fill: white;
@@ -456,6 +463,12 @@ blockquote {
 .ytCont iframe {
     width: 100%;
     height: inherit;
+}
+
+.imgBlock .ytCont {
+    height: 60vh;
+    width: 100%;
+    margin: 0 auto;
 }
 
 
